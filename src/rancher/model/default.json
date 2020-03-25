@@ -1,0 +1,106 @@
+{
+	"hostIPC": false,
+	"hostNetwork": false,
+	"hostPID": false,
+	"paused": false,
+	"annotations": {
+		"cattle.io/timestamp": "2020-03-06T09:26:26Z"
+	},
+	"baseType": "workload",
+	"containers": [{
+		"initContainer": false,
+		"restartCount": 0,
+		"stdin": true,
+		"stdinOnce": false,
+		"tty": true,
+		"allowPrivilegeEscalation": false,
+		"environment": {
+			"BLOCK_INTERVAL": "10",
+			"IP": "172.17.127.96 172.17.127.97"
+		},
+		"image": "39.102.43.24:30003/test/tkchain:v5",
+		"imagePullPolicy": "Always",
+		"name": "ntk5",
+		"ports": [{
+			"containerPort": 30000,
+			"hostPort": 30000,
+			"kind": "HostPort",
+			"protocol": "TCP",
+			"sourcePort": 30000,
+			"type": "/v3/project/schemas/containerPort"
+		}, {
+			"containerPort": 5555,
+			"hostPort": 5555,
+			"kind": "HostPort",
+			"protocol": "TCP",
+			"sourcePort": 5555,
+			"type": "/v3/project/schemas/containerPort"
+		}, {
+			"containerPort": 26656,
+			"hostPort": 26656,
+			"kind": "HostPort",
+			"protocol": "TCP",
+			"sourcePort": 26656,
+			"type": "/v3/project/schemas/containerPort"
+		}],
+		"privileged": false,
+		"readOnly": false,
+		"resources": {
+			"type": "/v3/project/schemas/resourceRequirements",
+			"requests": {},
+			"limits": {}
+		},
+		"runAsNonRoot": false,
+		"terminationMessagePath": "/dev/termination-log",
+		"terminationMessagePolicy": "File",
+		"type": "container",
+		"environmentFrom": [],
+		"capAdd": [],
+		"capDrop": [],
+		"livenessProbe": null,
+		"volumeMounts": []
+	}],
+	"created": "2020-03-06T09:13:46Z",
+	"createdTS": 1583486026000,
+	"creatorId": null,
+	"daemonSetConfig": {
+		"maxUnavailable": 1,
+		"minReadySeconds": 0,
+		"revisionHistoryLimit": 10,
+		"strategy": "RollingUpdate"
+	},
+	"daemonSetStatus": {
+		"currentNumberScheduled": 2,
+		"desiredNumberScheduled": 2,
+		"numberAvailable": 2,
+		"numberMisscheduled": 0,
+		"numberReady": 2,
+		"numberUnavailable": 0,
+		"observedGeneration": 1,
+		"type": "/v3/project/schemas/daemonSetStatus",
+		"updatedNumberScheduled": 2
+	},
+	"dnsPolicy": "ClusterFirst",
+	"imagePullSecrets": [{
+		"name": "harbor-test",
+		"type": "/v3/project/schemas/localObjectReference"
+	}],
+	"labels": {},
+	"name": "ntk5",
+	"namespaceId": "default",
+	"projectId": "c-7x8mp:p-j5l28",
+	"restartPolicy": "Always",
+	"scheduling": {
+		"scheduler": "default-scheduler",
+		"node": {}
+	},
+	"selector": {
+		"type": "/v3/project/schemas/labelSelector"
+	},
+	"state": "active",
+	"terminationGracePeriodSeconds": 30,
+	"transitioning": "no",
+	"transitioningMessage": "",
+	"type": "workload",
+	"volumes": []
+}
